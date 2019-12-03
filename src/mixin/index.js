@@ -6,11 +6,11 @@ Vue.mixin({
     };
   },
   computed: {
-    routerList() {
+    routerList() { // 页面导航中英文
       return [
         {
-          path: "/workBench",
-          name: this.$t('message.workbench'),
+          path: "/workBench", // 路由的路径
+          name: this.$t('message.workbench'), // 导航名字
           icon: "el-icon-menu"
         },
         {

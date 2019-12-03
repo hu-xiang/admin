@@ -5,7 +5,7 @@ import ElementUI from 'element-ui';
 Vue.use(ElementUI);
 import qs from 'qs';
 
-const axiosBaseUrl = "http://192.168.49.82:8080/jeecg-boot";
+const axiosBaseUrl = "http://192.168.49.82:8080/jeecg-boot"; // 和后台对接时的地址
 axios.defaults.baseURL = axiosBaseUrl;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.timeout = 30 * 1000;

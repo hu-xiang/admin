@@ -180,6 +180,10 @@ export default {
     },
     login() {
       // 登录
+      /**
+       * 和后台对接登陆时去掉下面没注释的内容，然后把下面注释的内容还原，url改成对应的即可
+       * 登录成功后，后台接口返回一个权限列表、用户信息（包括中英文名字、性别，工作台页面有用到）、签权token,权限列表类似this.resourceCodes那样的，然后把这三个一起存在session中
+       */
       const userInfo = {
         sex: 0,
         username: 'dada',
@@ -189,6 +193,7 @@ export default {
       sessionStorage.setItem("userInfo", JSON.stringify(userInfo));
       sessionStorage.setItem("resourceCodes", this.resourceCodes);
       this.$router.push("/index");
+
       // this.$axios.post("/sys/login", this.ruleForm).then(res => {
       //   if (res && res.success) {
       //     sessionStorage.setItem("token", res.result.token);
