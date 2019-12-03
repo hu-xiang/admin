@@ -1,5 +1,6 @@
 import Vue from 'vue';
-
+import './ajax.js'
+import './authority.js'
 import topBar from '../components/common/topBar.vue';
 import tableBar from '../components/common/tableBar.vue';
 import contentBar from '../components/common/contentBar.vue';

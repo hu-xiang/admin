@@ -102,16 +102,16 @@ export default {
     eventSearch() {},
     eventReset() {},
     getList(bool) {
-      if (bool) Object.assign(this.curSearchContent, this.searchContent);
-      this.loading = true;
-      this.$axios.get(`/sys/role/list?${this.$qs.stringify(this.curSearchContent)}`).then(res => {
-        this.loading = false;
-        if (res && res.success) {
-          this.tableList = res.result.records;
-          this.total = res.result.total;
-        }
-      });
-      Object.assign(this.searchContent, this.curSearchContent);
+      // if (bool) Object.assign(this.curSearchContent, this.searchContent);
+      // this.loading = true;
+      // this.$axios.get(`/sys/role/list?${this.$qs.stringify(this.curSearchContent)}`).then(res => {
+      //   this.loading = false;
+      //   if (res && res.success) {
+      //     this.tableList = res.result.records;
+      //     this.total = res.result.total;
+      //   }
+      // });
+      // Object.assign(this.searchContent, this.curSearchContent);
     },
     handleSizeChange(val) {
       this.curSearchContent.pageSize = val;

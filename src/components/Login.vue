@@ -70,6 +70,9 @@
         </el-select>
       </div>
     </div>
+    <footer>
+        <p>COPYRIGHT  ©  2019 {{$t('message.comFullName')}}  {{$t('message.allRightsReserved')}}</p>
+    </footer>
   </div>
   <!-- <div class="login-app">
 		<div class="login-outbox">
@@ -177,13 +180,23 @@ export default {
     },
     login() {
       // 登录
-      this.$axios.post("/sys/login", this.ruleForm).then(res => {
-        if (res && res.success) {
-          sessionStorage.setItem("token", res.result.token);
-          sessionStorage.setItem("resourceCodes", this.resourceCodes); // 后台还没提供目前写死的数据
-          this.$router.push("/index");
-        }
-      });
+      const userInfo = {
+        sex: 0,
+        username: 'dada',
+        realname: '大大',
+      }
+      sessionStorage.setItem("token", 'sadghsadjhsadsakldh2334');
+      sessionStorage.setItem("userInfo", JSON.stringify(userInfo));
+      sessionStorage.setItem("resourceCodes", this.resourceCodes);
+      this.$router.push("/index");
+      // this.$axios.post("/sys/login", this.ruleForm).then(res => {
+      //   if (res && res.success) {
+      //     sessionStorage.setItem("token", res.result.token);
+      //     sessionStorage.setItem("userInfo", JSON.stringify(res.result.userInfo));
+      //     sessionStorage.setItem("resourceCodes", this.resourceCodes); // 后台还没提供目前写死的数据
+      //     this.$router.push("/index");
+      //   }
+      // });
     },
     showPassword() {
       if (this.passwordType === "password") {
@@ -249,7 +262,7 @@ export default {
   position: relative;
   > footer {
     position: absolute;
-    bottom: 40px;
+    bottom: 0px;
     left: 0;
     height: 60px;
     width: 100%;

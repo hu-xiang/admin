@@ -187,11 +187,11 @@ Vue.mixin({
   // 路由渲染前动作
   beforeRouteLeave(to, from, next) {
     // 判断是否有token，验证是否已登录
-    if (sessionStorage.getItem('token')) {
+    if (sessionStorage.getItem('token')) { // 如果有token
 
       if (to.path === '/index') { // 由于白名单没有包含/index,但是进入系统必须通过/index,所以遇到index在已登录后放行
         return next();
-      } else if (sessionStorage.getItem('resourceCodes').includes(to.path)) { // // 白名单放行
+      } else if (sessionStorage.getItem('resourceCodes').includes(to.path)) { // 白名单放行
         return next();
       } else { // 黑名单禁止并给出提示
         ElementUI.Message.error({
@@ -202,9 +202,9 @@ Vue.mixin({
       }
 
     } else { // 没有token，直接跳到登录页
-      if (to.path === '/') {
+      if (to.path === '/') { // 当没有token，到登录页放行
         next();
-      } else {
+      } else { // 当没有token,到非登录页，给出没登陆提示，并重定向到登录页
         ElementUI.Message.error({
           message: '您还没登陆',
           duration: 3000,
