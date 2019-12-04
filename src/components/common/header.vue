@@ -50,6 +50,7 @@
                         type: 'warning'
                     }).then(() => {
                         this.$router.push("/");
+                        sessionStorage.clear()
                     }).catch(() => {
                         this.$message({
                             type: 'info',
